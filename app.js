@@ -12,25 +12,8 @@ const JWT_SECRET =
 
   const mongoUrl="mongodb+srv://starlord:linkinpa@cluster0.sk1bjdg.mongodb.net/?retryWrites=true&w=majority"
 // Add headers before the routes are defined
-app.use(function (req, res, next) {
 
-    // Website you wish to allow to connect
-    res.setHeader('Access-Control-Allow-Origin', '*');
-
-    // Request methods you wish to allow
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-
-    // Request headers you wish to allow
-    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-
-    // Set to true if you need the website to include cookies in the requests sent
-    // to the API (e.g. in case you use sessions)
-    res.setHeader('Access-Control-Allow-Credentials', true);
-
-    // Pass to next layer of middleware
-    next();
-});
-app.use(cors());
+app.use(cors({origin:'https://mybooklist-web.netlify.app'));
 mongoose
   .connect(mongoUrl, {
     useNewUrlParser: true,
@@ -67,7 +50,6 @@ app.post("/register", async (req, res) => {
     res.send({ status: "error" });
   }
 });
-app.options('/login-user', cors())
 app.post("/login-user", async (req, res) => {
   const {email, password } = req.body;
   const user = await User.findOne({ email });
