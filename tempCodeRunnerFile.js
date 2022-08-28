@@ -1,0 +1,1 @@
+const mongoUrl="mongodb+srv://starlord:linkinpa@cluster0.sk1bjdg.mongodb.net/?retryWrites=true&w=majority"
