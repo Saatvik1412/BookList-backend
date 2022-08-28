@@ -3,7 +3,7 @@ const app = express();
 const mongoose = require("mongoose");
 app.use(express.json());
 const cors = require("cors");
-app.use(cors());
+
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
@@ -92,3 +92,4 @@ app.get('/', (_, res) => res.send('damn'))
 app.listen(process.env.PORT || 3000, () => {
     console.log("Server Started");
   });
+app.use(cors());
