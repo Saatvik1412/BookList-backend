@@ -67,7 +67,7 @@ app.post("/register", async (req, res) => {
     res.send({ status: "error" });
   }
 });
-
+app.options('/login-user', cors())
 app.post("/login-user", async (req, res) => {
   const {email, password } = req.body;
   const user = await User.findOne({ email });
