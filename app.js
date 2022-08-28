@@ -89,6 +89,6 @@ app.post("/userData", async (req, res) => {
   } catch (error) {}
 });
 app.get('/', (_, res) => res.send('damn'))
-// app.listen(process.env.PORT || 3000, () => {
-//     console.log("Server Started");
-//   });
+app.listen(process.env.PORT || 3000, () => {
+    console.log("Server Started");
+  });
