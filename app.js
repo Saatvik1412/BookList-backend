@@ -30,7 +30,7 @@ app.use(function (req, res, next) {
     // Pass to next layer of middleware
     next();
 });
-
+app.use(cors());
 mongoose
   .connect(mongoUrl, {
     useNewUrlParser: true,
@@ -110,4 +110,4 @@ app.get('/', (_, res) => res.send('damn'))
 app.listen(process.env.PORT || 3000, () => {
     console.log("Server Started");
   });
-app.use(cors());
+
