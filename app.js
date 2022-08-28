@@ -13,7 +13,7 @@ const JWT_SECRET =
   const mongoUrl="mongodb+srv://starlord:linkinpa@cluster0.sk1bjdg.mongodb.net/?retryWrites=true&w=majority"
 // Add headers before the routes are defined
 
-app.use(cors({origin:'https://mybooklist-web.netlify.app'));
+app.use(cors());
 mongoose
   .connect(mongoUrl, {
     useNewUrlParser: true,
