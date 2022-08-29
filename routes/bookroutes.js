@@ -50,8 +50,8 @@ router.route("/create").post((req, res) => {
     newBook.save();
 })
 
-router.route("/viewbooks").get((req,res) =>{
-    Book.find()
+router.route("/viewbooks").get( async (req,res) =>{
+  await Book.find()
         .then(foundBooks => res.json(foundBooks))
 })
 
