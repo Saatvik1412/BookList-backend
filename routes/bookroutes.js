@@ -73,9 +73,9 @@ router.put("/update", async (req, res) => {
             updatedBook.rating=newrating;
 
             updatedBook.save();
-            console.log(updatedBook.sDate, newsDate);
-            console.log(updatedBook.eDate, neweDate);
-            console.log(updatedBook.rating, newrating);
+//             console.log(updatedBook.sDate, newsDate);
+//             console.log(updatedBook.eDate, neweDate);
+//             console.log(updatedBook.rating, newrating);
         });
     } catch(err){
         console.log(err);
