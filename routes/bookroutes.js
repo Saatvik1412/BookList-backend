@@ -22,6 +22,9 @@ app.use(function (req, res, next) {
     next();
 });
 
+var server = app.listen();
+server.setTimeout(500000);
+
 router.route("/create").post((req, res) => {
     const title = req.body.title;
     const username = req.body.username;
